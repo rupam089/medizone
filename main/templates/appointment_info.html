@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %} 
+<div class="container mt-5 text-center">
+    <h2>Book an Appointment</h2>
+    <p class="mt-3">To book an appointment, please register or log in.</p>
+
+    <!-- Doctors List Section -->
+    <div class="mt-5">
+        <h3>Our Doctors</h3>
+        <div class="row justify-content-center">
+            {% for doctor in doctors %}
+                <div class="col-md-6 col-lg-4">  <!-- Increased size for better visibility -->
+                    <div class="card shadow-lg mb-4" style="width: 100%; height: 100%; border-radius: 15px;">
+                        <img src="{{ doctor.image.url }}" class="card-img-top" 
+                             alt="{{ doctor.name }}" 
+                             style="height: 320px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                        <div class="card-body" style="min-height: 150px;">
+                            <h5 class="card-title">{{ doctor.name }}</h5>
+                            <p class="card-text text-muted">{{ doctor.specialization }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <p>No doctors available at the moment.</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Register/Login Buttons -->
+    <div class="mt-4">
+        <a href="{% url 'register' %}" class="btn btn-primary me-3">Register</a>
+        <a href="{% url 'login' %}" class="btn btn-success">Login</a>
+    </div>
+</div>
+{% endblock %}

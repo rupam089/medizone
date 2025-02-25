@@ -1,0 +1,17 @@
+<!-- profile.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Profile</h2>
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    {% if user.patient %}
+        <p><strong>Role:</strong> Patient</p>
+    {% elif user.doctor %}
+        <p><strong>Role:</strong> Doctor</p>
+    {% else %}
+        <p><strong>Role:</strong> Unknown</p>
+    {% endif %}
+</div>
+{% endblock %}

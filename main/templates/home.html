@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<!-- Hero Banner with Background -->
+<section class="home-banner" style="background: url('/static/images/background.avif') no-repeat center center; background-size: cover; padding: 100px 0; text-align: center; color: #fff;">
+    <div class="banner-overlay">
+        <h1 style="font-size: 3rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Welcome to Our Dental Clinic</h1>
+        <p style="font-size: 1.2rem; margin-top: 20px;">Where your smile is our passion</p>
+        <a href="/appointment_info" class="btn-cta" style="margin-top: 30px; padding: 15px 30px; background-color: #ff9800; color: #fff; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;">Book an Appointment</a>
+    </div>
+</section>
+
+<!-- About Us Section -->
+<section class="about-us" style="padding: 60px 20px; background-color: #f9f9f9; text-align: center;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">About Our Clinic</h2>
+    <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
+        Our Dental Clinic has been committed to providing top-quality dental care with a friendly and professional approach.
+        We combine modern technology with years of expertise to ensure you leave with a brighter, healthier smile.
+    </p>
+</section>
+
+<!-- Doctors Section -->
+<section class="bg-light py-5 text-center">
+  <div class="container">
+      <h2 class="mb-4">Meet Our Doctors</h2>
+      <div class="row justify-content-center">
+          <div class="col-md-4">
+              <div class="card shadow-lg">
+                  <img src="{% static 'images/arijit_bedi.jpg' %}" class="card-img-top rounded-circle p-3" alt="Dr. Arijit Bedi">
+                  <div class="card-body">
+                      <h5 class="card-title">Dr. Arijit Bedi</h5>
+                      <p class="card-text">Specialist: Cosmetic Dentistry</p>
+                      <p class="text-muted">MDS in Cosmetic Dentistry, BDS</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card shadow-lg">
+                  <img src="{% static 'images/anamika_bedi.jpeg' %}" class="card-img-top rounded-circle p-3" alt="Dr. Anamika Bedi">
+                  <div class="card-body">
+                      <h5 class="card-title">Dr. Anamika Bedi</h5>
+                      <p class="card-text">Specialist: Orthodontics</p>
+                      <p class="text-muted">MDS in Orthodontics, BDS</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Timings Section -->
+<section class="timings" style="padding: 60px 20px; background-color: #fff; text-align: center;">
+  <div class="container">
+    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Clinic Timings</h2>
+    <p style="max-width: 600px; margin: 0 auto 40px; font-size: 1.1rem; line-height: 1.6;">
+      We are open during the following hours to serve you better:
+    </p>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <ul style="list-style: none; padding: 0; font-size: 1.1rem;">
+          <li style="margin-bottom: 10px;"><strong>Monday - Friday:</strong> 9:00 AM - 7:00 PM</li>
+          <li style="margin-bottom: 10px;"><strong>Saturday:</strong> 10:00 AM - 4:00 PM</li>
+          <li style="margin-bottom: 10px;"><strong>Sunday:</strong> Closed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services" style="padding: 60px 20px; background-color: #fff;">
+    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 40px;">Our Services</h2>
+    <div class="service-cards" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px;">
+        <!-- Existing Services -->
+        <div class="service-card" style="max-width: 300px; padding: 20px; border: 1px solid #ddd; border-radius: 10px; transition: box-shadow 0.3s; background-color: #fdfdfd;">
+            <h3 style="margin-bottom: 15px;">General Dentistry</h3>
+            <p>Comprehensive dental care for all ages, including cleanings, exams, and preventive treatments.</p>
+        </div>
+        <div class="service-card" style="max-width: 300px; padding: 20px; border: 1px solid #ddd; border-radius: 10px; transition: box-shadow 0.3s; background-color: #fdfdfd;">
+            <h3 style="margin-bottom: 15px;">Cosmetic Dentistry</h3>
+            <p>Enhance your smile with whitening, veneers, and other cosmetic dental procedures.</p>
+        </div>
+        <div class="service-card" style="max-width: 300px; padding: 20px; border: 1px solid #ddd; border-radius: 10px; transition: box-shadow 0.3s; background-color: #fdfdfd;">
+            <h3 style="margin-bottom: 15px;">Orthodontics</h3>
+            <p>Corrective treatments including braces and Invisalign to align your teeth perfectly.</p>
+        </div>
+
+        <!-- New Services -->
+        <div class="service-card" style="max-width: 300px; padding: 20px; border: 1px solid #ddd; border-radius: 10px; transition: box-shadow 0.3s; background-color: #fdfdfd;">
+            <h3 style="margin-bottom: 15px;">Dental Implants</h3>
+            <p>Replace missing teeth with durable, natural-looking implants to restore your smile and confidence.</p>
+        </div>
+        <div class="service-card" style="max-width: 300px; padding: 20px; border: 1px solid #ddd; border-radius: 10px; transition: box-shadow 0.3s; background-color: #fdfdfd;">
+            <h3 style="margin-bottom: 15px;">Pediatric Dentistry</h3>
+            <p>Specialized care for children’s oral health needs, ensuring a positive and comfortable experience.</p>
+        </div>
+        <div class="service-card" style="max-width: 300px; padding: 20px; border: 1px solid #ddd; border-radius: 10px; transition: box-shadow 0.3s; background-color: #fdfdfd;">
+            <h3 style="margin-bottom: 15px;">Periodontics</h3>
+            <p>Prevention, diagnosis, and treatment of gum diseases to maintain healthy gums and support structures.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section (Interactive Carousel) -->
+<section class="testimonials" style="padding: 60px 20px; background-color: #f9f9f9; text-align: center;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 40px;">What Our Patients Say</h2>
+    <div class="testimonial-carousel" style="max-width: 800px; margin: 0 auto; position: relative;">
+        <!-- Simple testimonial carousel items -->
+        <div class="testimonial-item" style="display: none;">
+            <p style="font-size: 1.1rem; font-style: italic;">"The team at the clinic is wonderful! They made me feel at ease and my smile has never looked better."</p>
+            <p style="margin-top: 15px; font-weight: bold;">- Patient A</p>
+        </div>
+        <div class="testimonial-item" style="display: none;">
+            <p style="font-size: 1.1rem; font-style: italic;">"Professional, caring, and truly talented. I highly recommend their services."</p>
+            <p style="margin-top: 15px; font-weight: bold;">- Patient B</p>
+        </div>
+        <div class="testimonial-item" style="display: none;">
+            <p style="font-size: 1.1rem; font-style: italic;">"Excellent experience from start to finish. My teeth look amazing and I couldn't be happier."</p>
+            <p style="margin-top: 15px; font-weight: bold;">- Patient C</p>
+        </div>
+    </div>
+</section>
+
+<script>
+  // Simple JavaScript to cycle through testimonials
+  const testimonials = document.querySelectorAll('.testimonial-item');
+  let currentTestimonial = 0;
+  
+  function showTestimonial(index) {
+    testimonials.forEach((item, i) => {
+      item.style.display = (i === index) ? 'block' : 'none';
+    });
+  }
+  
+  // Initial display
+  if(testimonials.length) {
+    showTestimonial(currentTestimonial);
+    setInterval(() => {
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      showTestimonial(currentTestimonial);
+    }, 5000); // Change testimonial every 5 seconds
+  }
+
+  // Add hover effects to service cards
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('mouseover', () => {
+      card.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
+    });
+    card.addEventListener('mouseout', () => {
+      card.style.boxShadow = 'none';
+    });
+  });
+</script>
+
+<!-- Responsive Styles -->
+<style>
+  @media (max-width: 768px) {
+    .doctor-cards, .service-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+    .home-banner h1 {
+      font-size: 2.5rem;
+    }
+    .btn-cta {
+      padding: 12px 25px;
+      font-size: 1rem;
+    }
+  }
+</style>
+{% endblock %}
