@@ -4,4 +4,3 @@ djangorestframework
 gunicorn  # Required for deploying on Render
 whitenoise  # For serving static files in production
 psycopg2-binary  # If using PostgreSQL
-dj-database-url

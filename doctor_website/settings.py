@@ -1,23 +1,23 @@
 import os
 from pathlib import Path
-import dj_database_url  # Required for Railway Database
 
 # Build paths inside the project like this: BASE_DIR / 'subdir/'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-qtl&b7-o9$p-f@_1!kr)i^dl@s2*^x%p2vzuq-w1&gnvud#l8w")
+SECRET_KEY = 'django-insecure-qtl&b7-o9$p-f@_1!kr)i^dl@s2*^x%p2vzuq-w1&gnvud#l8w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = False  # Set to False for production
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "medizone.up.railway.app localhost 127.0.0.1").split()
+ALLOWED_HOSTS = ['medizone-x975.onrender.com', 'localhost', '127.0.0.1', 'medizone.up.railway.app']
 
 # Trusted origins for CSRF protection
 CSRF_TRUSTED_ORIGINS = [
-    "https://medizone.up.railway.app",
-    "http://127.0.0.1",
-    "http://localhost"
+    'https://medizone-x975.onrender.com',
+    'http://medizone.up.railway.app/'
+    'http://127.0.0.1',
+    'http://localhost'
 ]
 
 # Application definition
@@ -30,10 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',  # WhiteNoise for static files
     'main',  # Your app
-    'django.contrib.sites',
 ]
-
-SITE_ID = 1  # Required for authentication with DEBUG=False
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -66,9 +63,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'doctor_website.wsgi.application'
 
-# Database (Uses Railway PostgreSQL if available, otherwise SQLite)
+# Database
 DATABASES = {
-    'default': dj_database_url.config(default=f'sqlite:///{BASE_DIR / "db.sqlite3"}', conn_max_age=600)
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 # Password validation
@@ -85,13 +85,13 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static Files Configuration
+# ✅ Static Files Configuration
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # Collects static files for deployment
 STATICFILES_DIRS = [BASE_DIR / 'main' / 'static']  # Static folder inside the app
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # Optimized static serving
 
-# Media Files Configuration
+# ✅ Media Files Configuration
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'  # Media folder outside the app
 
